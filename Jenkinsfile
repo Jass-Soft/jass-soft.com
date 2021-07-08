@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Test Parameters') {
             steps {
-                echo $VAULT_NAME
+                echo ${VAULT_NAME}
             }
         }
     }
