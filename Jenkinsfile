@@ -1,8 +1,13 @@
 def params
 
-node {
-    checkout scm
-    params = load "Parameters.groovy"
+pipeline {
+    agent any
+    stages {
+        stage('Load Parameters') {
+            steps {
+                script{
+                    checkout scm
+                    params = load "lib/Parameters.groovy"
                     params.setJobName(env.JOB_NAME)
                     properties([
                         parameters([
@@ -13,4 +18,8 @@ node {
                         string(name: 'EMAIL_LIST', defaultValue: 'abc@abc.com', description: 'Deployment success / failure email notification')
                         ])
                     ])
+                }
+            }
+        }
+    }
 }
