@@ -4,12 +4,10 @@ class Parameters implements Serializable {
 
     String jobName;
 
-    @NonCPS               
     def setJobName(String jobName) {
         this.jobName =jobName;
     }
-
-    @NonCPS                
+              
     def getEnvironmentType() {
                 
         switch(this.jobName) {
@@ -24,7 +22,6 @@ class Parameters implements Serializable {
         }
     }
 
-    @NonCPS
     def getEnvironments() {
   
         switch(this.jobName) {
@@ -39,7 +36,6 @@ class Parameters implements Serializable {
         }
     }
 
-    @NonCPS
     def getAgent() {
                 
         switch(this.jobName) {
@@ -54,7 +50,6 @@ class Parameters implements Serializable {
         }
     }
 
-    @NonCPS
     def getVaultName() {
                 
         switch(this.jobName) {

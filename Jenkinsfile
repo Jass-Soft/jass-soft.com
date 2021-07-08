@@ -1,13 +1,7 @@
 def params
 
-pipeline {
-    agent any
-    stages {
-        stage('Load Parameters') {
-            steps {
-                script{
-                    checkout scm
-                    params = load "Parameters.jenkinsfile"
+node {
+    params = load "Parameters.groovy"
                     params.setJobName(env.JOB_NAME)
                     properties([
                         parameters([
@@ -18,8 +12,13 @@ pipeline {
                         string(name: 'EMAIL_LIST', defaultValue: 'abc@abc.com', description: 'Deployment success / failure email notification')
                         ])
                     ])
-                }
-            }
+}
+pipeline {
+    agent any
+    stages {
+        stage('Load Parameters') {
+            steps {
+                echo 'Loading Parameters'
         }
     }
 }
