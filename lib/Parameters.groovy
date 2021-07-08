@@ -1,14 +1,14 @@
 class Parameters implements Serializable {
 
-    static final serialVersionUID = 1L
+    private static final serialVersionUID = 1L
 
-    String jobName;
+    private String jobName;
 
-    def setJobName(String jobName) {
+    setJobName(String jobName) {
         this.jobName =jobName;
     }
               
-    def getEnvironmentType() {
+    getEnvironmentType() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
@@ -22,7 +22,7 @@ class Parameters implements Serializable {
         }
     }
 
-    def getEnvironments() {
+    getEnvironments() {
   
         switch(this.jobName) {
             case JobName.DEV_TST:
@@ -36,7 +36,7 @@ class Parameters implements Serializable {
         }
     }
 
-    def getAgent() {
+    getAgent() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
@@ -50,7 +50,7 @@ class Parameters implements Serializable {
         }
     }
 
-    def getVaultName() {
+    getVaultName() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
