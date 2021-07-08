@@ -6,7 +6,7 @@ pipeline {
         stage('Load Parameters') {
             steps {
                 script{
-                    params = load "lib/Parameters.groovy"
+                    params = load "Parameters.groovy"
                     params.setJobName(env.JOB_NAME)
                     properties([
                         parameters([
