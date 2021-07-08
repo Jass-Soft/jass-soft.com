@@ -1,5 +1,7 @@
 class Parameters implements Serializable {
-                
+
+    static final serialVersionUID = 1L
+
     String jobName;
                
     def setJobName(String jobName) {
