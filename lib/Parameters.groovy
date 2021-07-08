@@ -72,4 +72,5 @@ class Parameters implements Serializable {
     }
 }
 
+return new Parameters();
 
