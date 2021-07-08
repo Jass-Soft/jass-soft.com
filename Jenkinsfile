@@ -1,6 +1,6 @@
 def params
 
-node('master') {
+node{
     stage('Choose') {
             params = load "lib/Parameters.groovy"
             params.setJobName(env.JOB_NAME)
