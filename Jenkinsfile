@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Test Parameters') {
             steps {
-                echo params.getAgent()
+                echo 'This is a test'
             }
         }
     }
