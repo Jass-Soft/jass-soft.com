@@ -1,3 +1,4 @@
+@NonCPS
 class Parameters implements Serializable {
 
     static final serialVersionUID = 1L
