@@ -1,10 +1,8 @@
 def params
+def vaultName
 
 pipeline {
     agent any
-    environment {
-        VAULT_NAME = params.getVaultName()
-    }
     stages {
         stage('Load Parameters') {
             steps {
@@ -12,6 +10,7 @@ pipeline {
                     checkout scm
                     params = load "lib/Parameters.groovy"
                     params.setJobName(env.JOB_NAME)
+                    vaultName = params.getVaultName()
                     properties([
                         parameters([
                         booleanParam(name: 'ONLY_DRY_RUN', defaultValue: true, description: 'If checked no deployment is perfomed only conneciton is checked'),
@@ -26,7 +25,7 @@ pipeline {
         }
         stage('Test Parameters') {
             steps {
-                echo "${VAULT_NAME}"
+                echo vaultName
             }
         }
     }
