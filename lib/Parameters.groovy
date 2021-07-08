@@ -2,13 +2,14 @@ class Parameters implements Serializable {
 
     private static final serialVersionUID = 1L
 
+    @Field
     private String jobName;
 
-    setJobName(String jobName) {
+    def setJobName(String jobName) {
         this.jobName =jobName;
     }
               
-    getEnvironmentType() {
+    def getEnvironmentType() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
@@ -22,7 +23,7 @@ class Parameters implements Serializable {
         }
     }
 
-    getEnvironments() {
+    def getEnvironments() {
   
         switch(this.jobName) {
             case JobName.DEV_TST:
