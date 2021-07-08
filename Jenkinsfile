@@ -1,5 +1,11 @@
 def params
-def vaultName
+
+node('master') {
+    stage('Choose') {
+            params = load "lib/Parameters.groovy"
+            params.setJobName(env.JOB_NAME)
+    }
+}
 
 pipeline {
     agent any
@@ -8,8 +14,7 @@ pipeline {
             steps {
                 script{
                     checkout scm
-                    params = load "lib/Parameters.groovy"
-                    params.setJobName(env.JOB_NAME)
+                    
                     vaultName = params.getVaultName()
                     properties([
                         parameters([
