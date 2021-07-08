@@ -2,6 +2,9 @@ def params
 
 pipeline {
     agent any
+    environment {
+        VAULT_NAME = params.getVaultName()
+    }
     stages {
         stage('Load Parameters') {
             steps {
@@ -23,7 +26,7 @@ pipeline {
         }
         stage('Test Parameters') {
             steps {
-                echo 'This is a test'
+                echo $VAULT_NAME
             }
         }
     }
