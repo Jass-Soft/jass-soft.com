@@ -13,12 +13,3 @@ node {
                         ])
                     ])
 }
-pipeline {
-    agent any
-    stages {
-        stage('Load Parameters') {
-            steps {
-                echo 'Loading Parameters'
-        }
-    }
-}
