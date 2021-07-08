@@ -37,7 +37,7 @@ class Parameters implements Serializable {
         }
     }
 
-    getAgent() {
+    def getAgent() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
@@ -51,7 +51,7 @@ class Parameters implements Serializable {
         }
     }
 
-    getVaultName() {
+    def getVaultName() {
                 
         switch(this.jobName) {
             case JobName.DEV_TST:
