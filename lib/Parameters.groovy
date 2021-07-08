@@ -46,7 +46,7 @@ class Parameters implements Serializable {
             case JobName.PROD || JobName.CTRLM_PROD:
                 return 'vx-0000002473'
             default:
-                return [JobName.NOT_DEFINED]
+                return JobName.NOT_DEFINED
         }
     }
 
@@ -60,7 +60,7 @@ class Parameters implements Serializable {
             case JobName.PROD || JobName.CTRLM_PROD:
                 return 'mdsansibleprod'
             default:
-                return [JobName.NOT_DEFINED]
+                return JobName.NOT_DEFINED
         }
     }
 
