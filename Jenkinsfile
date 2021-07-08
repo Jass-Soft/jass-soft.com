@@ -1,6 +1,7 @@
 def params
 
 node {
+    checkout scm
     params = load "Parameters.groovy"
                     params.setJobName(env.JOB_NAME)
                     properties([
