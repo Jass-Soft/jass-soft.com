@@ -6,6 +6,7 @@ pipeline {
         stage('Load Parameters') {
             steps {
                 script{
+                    checkout scm
                     params = load "Parameters.jenkinsfile"
                     params.setJobName(env.JOB_NAME)
                     properties([
